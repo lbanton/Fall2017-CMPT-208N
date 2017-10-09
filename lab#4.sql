@@ -142,7 +142,11 @@ VALUES(1011, 'Jan', 'c001', 'a01', 'p01', 1100,  495.00),
       (1026, 'May', 'c002', 'a05', 'p03',  808,  711.04);
       
       --lab#4 display--
-     
+      --Lafrance Banton
+      --course:Database Managemant
+      --10/1/17
+      -- Assignment lab # 4 SQL Queries - the subqueries sequel
+      
       --1 get the cities of agiant booking an order for a customer whose cis is 'c006'
      
    select city
