@@ -158,13 +158,13 @@ VALUES(1011, 'Jan', 'c001', 'a01', 'p01', 1100,  495.00),
 
 --2 Get the distinct is of product ordered through any agent who takes at least one ofer from a customer in Beijing, sorted by pid from hightest to lowest.--
 
-select distinct pid
-from Products
+select distinct pid,Products.name,Customers.city 
+from Products,Customers
 where pid in (select pid 
               from Orders
               where cid in(select cid
                            from Customers 
-                           where cid='c006' and city='Beijing'
+                           where city='Beijing'and cid='c006'
                            )
              );
  
