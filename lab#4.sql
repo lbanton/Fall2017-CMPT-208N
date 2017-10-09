@@ -147,7 +147,7 @@ VALUES(1011, 'Jan', 'c001', 'a01', 'p01', 1100,  495.00),
       --10/1/17
       -- Assignment lab # 4 SQL Queries - the subqueries sequel
       
-      --1 get the cities of agiant booking an order for a customer whose cis is 'c006'
+--1 get the cities of agiant booking an order for a customer whose cis is 'c006'
      
    select city
    from agents
@@ -155,3 +155,16 @@ VALUES(1011, 'Jan', 'c001', 'a01', 'p01', 1100,  495.00),
                    from orders
                    where cid='c006'
                   );
+
+--2 Get the distinct is of product ordered through any agent who takes at least one ofer from a customer in Beijing, sorted by pid from hightest to lowest.--
+
+select distinct pid
+from Products
+where pid in (select pid 
+              from Orders
+              where cid in(select cid
+                           from Customers 
+                           where cid='c006' and city='Beijing'
+                           )
+             );
+ 
