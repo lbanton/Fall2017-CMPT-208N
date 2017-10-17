@@ -142,11 +142,17 @@ VALUES(1011, 'Jan', 'c001', 'a01', 'p01', 1100,  495.00),
       (1026, 'May', 'c002', 'a05', 'p03',  808,  711.04);
 
 
--- SQL statements for displaying the example data
+-- SQL statements for displaying the example data.
 
 -- Auther:Lafrance Banton
--- Course:CMTP 308 Database Manegement
--- instructot:Prof. Alan
+-- Course:CMTP 308 Database Manegemen
+-- Instructor:Prof. Alan
 -- date:
 
---Lab # 6
+--                    Lab # 6                    --
+
+--#1
+
+SELECT(Customers.name, Products.city, Products.name) 
+FROM Customers, Products, Orders
+WHERE Products.pid = Customers.cid and Products.city>=3;
